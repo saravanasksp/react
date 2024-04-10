@@ -1,0 +1,114 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.main-sidebar.show {
+  transform: none;
+}
+.main-sidebar .nav .nav-item .nav-link.active, .main-sidebar .nav .nav-item .nav-link:hover {
+  text-decoration: none;
+}
+.login-form {    
+  .sub-title {
+      position: relative;
+    span {
+      background: #fff;
+      position: relative;
+      z-index: 2;
+      padding-right: 10px;
+    }
+    &:before {        
+      background: #f0f0f0;
+      content: "";
+      height: 1px;
+      position: absolute;
+      right: 0;
+      top: 11px;
+      width: 100%;
+    }
+  }
+  .login-with-account {
+    li {      
+      flex: 0 0 50%;
+      max-width: 50%;
+      a {
+          padding: 10px 20px;
+      }
+    }
+  }
+  .btn-blue {
+    padding: 12px 5px;
+  }
+  button.btn-close {
+    position: absolute;
+    right: -8px;
+    background: #f00;
+    color: #fff;
+    top: -7px;
+    box-shadow: none;
+    border-radius: 50%;
+    opacity: 1;
+    line-height: 16px;
+    font-size: 20px;
+    z-index: 1;
+  }
+  .login-text {
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-right: 30px;
+    padding: 0 0 8px;
+    position: relative;
+    background: transparent;
+    transition: 0.5s;
+    &.active {
+      color: #000;
+      &:after {
+        background-color: #473bf0;
+        bottom: -2px;
+        content: "";
+        height: 3px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  } 
+}

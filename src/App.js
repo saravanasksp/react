@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import './App.scss';
+import { BrowserRouter as Router, Route, Routes,Navigate } from 'react-router-dom';
+import Home from './components/home';
+import Addnewpost from './components/addnewpost';
+import Postlist from "./components/postlist";
+import Userprofile from "./components/userprofile";
+import Login from "./components/login";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  let isAuthenticated = false
+  if(localStorage.getItem("tokenid")) {
+    isAuthenticated = true
+  }
+    return (
+      <>
+      <Router>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/postlist" element={<Postlist />} />
+              <Route path="/addnewpost" element={<Addnewpost />} />
+              <Route path="/userprofile" element={<Userprofile />} />
+              <Route path="/login" element={isAuthenticated ? <Navigate replace to="/" /> : <Login />} /> 
+              {/* <Route path="/login" element={<Login />} /> */}
+            </Routes>
+        </Router>
+      </>
+    );
 }
 
 export default App;
