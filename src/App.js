@@ -7,21 +7,23 @@ import Addnewpost from './components/addnewpost';
 import Postlist from "./components/postlist";
 import Userprofile from "./components/userprofile";
 import Login from "./components/login";
+import { useSelector } from 'react-redux';
 
 function App() {
+  const tokenvalue = useSelector(state => state.authToken);
   let isAuthenticated = false
-  if(localStorage.getItem("tokenid")) {
+  if(tokenvalue) {
     isAuthenticated = true
   }
     return (
       <>
       <Router>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={isAuthenticated ? <Navigate replace to="/home" /> : <Login />} />
+              <Route path="/home" element={isAuthenticated ? <Home /> : <Navigate replace to="/" />} />
               <Route path="/postlist" element={<Postlist />} />
               <Route path="/addnewpost" element={<Addnewpost />} />
               <Route path="/userprofile" element={<Userprofile />} />
-              <Route path="/login" element={isAuthenticated ? <Navigate replace to="/" /> : <Login />} /> 
               {/* <Route path="/login" element={<Login />} /> */}
             </Routes>
         </Router>

@@ -1,15 +1,22 @@
 import logo from '../assets/images/uiblog-logo.png'
 import { Link, NavLink } from 'react-router-dom'
 import { useLocation } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { clearAuthToken } from '../actions/authActions';
+
 
 const Sidebar = () => {
-  const tokenid = localStorage.getItem("tokenid")
+  const tokenvalue = useSelector(state => state.authToken);
+  console.log("authToken",tokenvalue)
+  //const tokenid = localStorage.getItem("tokenid")
   const location = useLocation();
+  const dispatch = useDispatch();
   let loginname;
-  if (tokenid) {
-    loginname =  <Link to={location.pathname} onClick={() => localStorage.setItem('tokenid','')}>Logout</Link>
+  if (tokenvalue) {
+    loginname =  <Link to={location.pathname} onClick={() => dispatch(clearAuthToken())}>Logout</Link>
   } else {
-    loginname = <Link to="/login">Login</Link>
+    loginname = <Link to="/">Login</Link>
   }
   console.log('ttt',location.pathname)
     return (
@@ -63,7 +70,7 @@ const Sidebar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link " to="/login">
+                <NavLink className="nav-link " to="/">
                   <i className="material-icons">person</i>
                   <span>{loginname}</span>
                 </NavLink>

@@ -3,6 +3,8 @@ import {  faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { saveAuthToken } from '../actions';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 const Login = () => {
@@ -10,6 +12,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
     const Navigate = useNavigate();
+    const dispatch = useDispatch();
   
     const handleSubmit = async (event) => {
       event.preventDefault();
@@ -21,8 +24,10 @@ const Login = () => {
     axios.post('http://143.244.141.39:8003/auth/login/', postData)
     .then(response => {
         console.log('Login successful:', response.data);
-        localStorage.setItem('tokenid', response.data.token);
-        Navigate('/', { state: { tokenid: response.data.token } })
+        //localStorage.setItem('tokenid', response.data.token);
+        Navigate('/home', { state: { tokenid: response.data.token } })
+        const authToken  = response.data.token;
+        dispatch(saveAuthToken(authToken));
 
         // Reset form fields and error state upon successful login
         setUsername('');

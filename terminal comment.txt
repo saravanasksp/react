@@ -12,3 +12,8 @@ npm i react-helmet
 npm install react-router-dom --save
 npm i bootstrap
 npm i sass --save-dev
+
+
+The first command installs the Redux core and React Redux packages.
+npm install redux react-redux
+npm install @reduxjs/toolkit
