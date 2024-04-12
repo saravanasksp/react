@@ -46,7 +46,7 @@ const About = () => {
                                 <li>A pleasure exertion if believed provided to. All led out world this music while asked. Paid mind even sons does he door no. Attended overcame repeated it is perceived Marianne in.</li>
                                 <li>Warrant private blushes removed an in equally totally if. Delivered dejection necessary objection do Mr prevailed. Mr feeling does chiefly cordial in do.</li>
                                 <li>
-                                    Mr feeling does chiefly cordial in do. <a href="#0"><u>Water timed folly right aware if oh truth.</u></a> Imprudence attachment him his for sympathize. Large above be to means.
+                                    Mr feeling does chiefly cordial in do. <Link to="/"><u>Water timed folly right aware if oh truth.</u></Link> Imprudence attachment him his for sympathize. Large above be to means.
                                 </li>
                                 <li>Dashwood does provide stronger is. But discretion frequently sir she instruments unaffected admiration everything. Meant balls it if up doubt small purse.</li>
                             </ul>

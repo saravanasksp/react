@@ -1,8 +1,6 @@
 import logo from '../assets/images/uiblog-logo.png'
-import { Link, NavLink } from 'react-router-dom'
-import { useLocation } from "react-router-dom";
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { Link, NavLink, useLocation } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux';
 import { clearAuthToken } from '../actions/authActions';
 
 
@@ -28,9 +26,9 @@ const Sidebar = () => {
                   <img id="main-logo" className="d-inline-block align-top mr-1" style={{maxWidth: "130px"}} src={logo} alt="main-logo"/>
                 </div>
               </Link>
-              <a href='#0' className="toggle-sidebar d-sm-inline d-md-none d-lg-none" data-bs-toggle="collapse" data-bs-target=".main-sidebar">
+              <Link to="/" className="toggle-sidebar d-sm-inline d-md-none d-lg-none" data-bs-toggle="collapse" data-bs-target=".main-sidebar">
                 <i className="material-icons">&#xE5C4;</i>
-              </a>
+              </Link>
             </nav>
           </div>
           <form action="#0" className="main-sidebar__search w-100 border-right d-sm-flex d-md-none d-lg-none">
@@ -72,7 +70,7 @@ const Sidebar = () => {
               <li className="nav-item">
                 <NavLink className="nav-link " to="/">
                   <i className="material-icons">person</i>
-                  <span>{loginname}</span>
+                {loginname}
                 </NavLink>
               </li>
             </ul>

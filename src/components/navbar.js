@@ -10,15 +10,7 @@ import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
-  // const tokenid = localStorage.getItem("tokenid")
-  // const location = useLocation();
-  // let logintext;
-  // if (tokenid) {
-  //     logintext =  <Link to={location.pathname} onClick={() => localStorage.setItem('tokenid','')}>Logout</Link>
-  // } else {
-  //   logintext = <Link to="/login">Login</Link>
-  // }
-  // console.log('ttt',location.pathname)
+  
     return (
         <div className="main-navbar sticky-top bg-white">
             <nav className="navbar align-items-stretch navbar-light flex-md-nowrap p-0">

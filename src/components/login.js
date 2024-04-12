@@ -80,12 +80,12 @@ const Login = () => {
                                         <div className="login-with-account mb-2">
                                             <ul className="d-flex list-unstyled mb-2">
                                                 <li>
-                                                    <a href="https://www.facebook.com/" className="bg-primary text-white rounded-2 me-3 d-block text-center" target="_blank" rel="noreferrer"> 
-                                                    <FontAwesomeIcon icon={faFacebook} /> Facebook</a>
+                                                    <Link to="https://www.facebook.com/" className="bg-primary text-white rounded-2 me-3 d-block text-center" target="_blank" rel="noreferrer"> 
+                                                    <FontAwesomeIcon icon={faFacebook} /> Facebook</Link>
                                                 </li>
                                                 <li>
-                                                    <a href="https://google.com/" className="bg-danger text-white rounded-2 d-block text-center" target="_blank" rel="noreferrer">
-                                                    <FontAwesomeIcon icon={faEnvelope} /> Google</a>
+                                                    <Link to="https://google.com/" className="bg-danger text-white rounded-2 d-block text-center" target="_blank" rel="noreferrer">
+                                                    <FontAwesomeIcon icon={faEnvelope} /> Google</Link>
                                                 </li>
                                             </ul>
                                         </div>          

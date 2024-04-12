@@ -21,9 +21,10 @@ function App() {
             <Routes>
               <Route path="/" element={isAuthenticated ? <Navigate replace to="/home" /> : <Login />} />
               <Route path="/home" element={isAuthenticated ? <Home /> : <Navigate replace to="/" />} />
-              <Route path="/postlist" element={<Postlist />} />
-              <Route path="/addnewpost" element={<Addnewpost />} />
-              <Route path="/userprofile" element={<Userprofile />} />
+              <Route path="/postlist" element={isAuthenticated ? <Postlist /> : <Navigate replace to="/" />} />
+              <Route path="/addnewpost" element={isAuthenticated ? <Addnewpost /> : <Navigate replace to="/" />} />
+              <Route path="/userprofile" element={isAuthenticated ? <Userprofile /> : <Navigate replace to="/" />} />
+              {/* <Route path="/postlist" element={<Postlist />} /> */}
               {/* <Route path="/login" element={<Login />} /> */}
             </Routes>
         </Router>
