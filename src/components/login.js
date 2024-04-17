@@ -8,8 +8,9 @@ import { saveAuthToken } from '../actions';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 const Login = () => {
-    const [email, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('');
     const [error, setError] = useState(null);
     const Navigate = useNavigate();
     const dispatch = useDispatch();
@@ -30,7 +31,7 @@ const Login = () => {
         dispatch(saveAuthToken(authToken));
 
         // Reset form fields and error state upon successful login
-        setUsername('');
+        setEmail('');
         setPassword('');
         setError(null);
     })
@@ -39,6 +40,34 @@ const Login = () => {
     });
      
     };
+    const handleregSubmit = async (event) => {
+        event.preventDefault();
+        const postData = {
+          username: username,
+          email: email,
+          password: password
+        };
+        
+        axios.post('http://143.244.141.39:8003/auth/register/', postData)
+        .then(response => {
+            console.log('register successful:', response.status);
+            //localStorage.setItem('tokenid', response.data.token);
+            if (response.status === 201) {
+                Navigate('/')
+            //  const authToken  = response.data.token;
+            //dispatch(saveAuthToken(authToken));
+            }
+            
+            // Reset form fields and error state upon successful login
+            setUsername('');
+            setEmail('');
+            setPassword('');
+            setError(null);
+        })
+        .catch(error => {
+            console.error('Error Register in:', error);
+        });       
+      };
     return (
         <div>
         <div className="container-fluid">
@@ -62,14 +91,12 @@ const Login = () => {
                                     <div className="mb-3">
                                         <label htmlFor="exampleInputEmail1" className="form-label">Username</label>
                                         <input type="text" value={email}
-                                        onChange={(e) => setUsername(e.target.value)}
+                                        onChange={(e) => setEmail(e.target.value)}
                                         required className="form-control shadow-none"/>
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                        <input type="password"  value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required className="form-control shadow-none"/>
+                                        <input type="password"  value={password} onChange={(e) => setPassword(e.target.value)} required className="form-control shadow-none"/>
                                     </div>
                                     <div className="mb-3">
                                         <button type="submit" className="w-100 btn bg-primary bg-gradient py-2 text-white">Login Now</button>
@@ -91,25 +118,27 @@ const Login = () => {
                                         </div>          
                                     </div>
                                     <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                        <div className="mb-3">
-                                            <label htmlFor="exampleInputEmail1" className="form-label">Name</label>
-                                            <input type="text" className="form-control shadow-none"/>
-                                        </div>
-                                        <div className="mb-3">
-                                            <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
-                                            <input type="text" className="form-control shadow-none"/>
-                                        </div>
-                                        <div className="mb-3">
-                                            <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                            <input type="password" className="form-control shadow-none"/>
-                                        </div>
-                                        <div className="mb-3 form-check">
-                                            <input type="checkbox" className="form-check-input shadow-none" id="exampleCheck1"/>
-                                            <label className="form-check-label" htmlFor="exampleCheck1">Remember me</label>
-                                        </div>
-                                        <div className="mb-1">
-                                        <Link to="/" className="w-100 btn bg-primary bg-gradient btn-blue text-white fw-bold">Register</Link>
-                                        </div>
+                                        <form onSubmit={handleregSubmit}>          
+                                            <div className="mb-3">
+                                                <label htmlFor="exampleInputEmail1" className="form-label">Name</label>
+                                                <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" className="form-control shadow-none"/>
+                                            </div>
+                                            <div className="mb-3">
+                                                <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
+                                                <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" className="form-control shadow-none"/>
+                                            </div>
+                                            <div className="mb-3">
+                                                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+                                                <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="form-control shadow-none"/>
+                                            </div>
+                                            <div className="mb-3 form-check">
+                                                <input type="checkbox" className="form-check-input shadow-none" id="exampleCheck1"/>
+                                                <label className="form-check-label" htmlFor="exampleCheck1">Remember me</label>
+                                            </div>
+                                            <div className="mb-1">
+                                            <button type="submit" className="w-100 btn bg-primary bg-gradient btn-blue text-white fw-bold">Register</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
