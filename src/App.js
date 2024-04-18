@@ -7,6 +7,7 @@ import Addnewpost from './components/addnewpost';
 import Postlist from "./components/postlist";
 import Userprofile from "./components/userprofile";
 import Login from "./components/login";
+import ProductList from "./components/productlist";
 import { useSelector } from 'react-redux';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               <Route path="/postlist" element={isAuthenticated ? <Postlist /> : <Navigate replace to="/" />} />
               <Route path="/addnewpost" element={isAuthenticated ? <Addnewpost /> : <Navigate replace to="/" />} />
               <Route path="/userprofile" element={isAuthenticated ? <Userprofile /> : <Navigate replace to="/" />} />
+              <Route path="/productlist" element={isAuthenticated ? <ProductList /> : <Navigate replace to="/" />} />
               {/* <Route path="/postlist" element={<Postlist />} /> */}
               {/* <Route path="/login" element={<Login />} /> */}
             </Routes>

@@ -1,4 +1,22 @@
 // src/reducers/index.js
+import {FETCH_PRODUCTS} from '../actions';
+import { combineReducers } from 'redux';
+
+// Product Reducer
+const initialProductsState = {
+    products: [],
+};
+const productsReducer = (state = initialProductsState, action) => {
+    switch (action.type) {
+      case FETCH_PRODUCTS:
+        return {
+          ...state,
+          products: [...state.products, action.payload],
+        };
+      default:
+        return state;
+    }
+  };
 
 const initialState = {
     authToken: null
@@ -21,4 +39,12 @@ switch (action.type) {
 }
 };
 
-export default authReducer;
+//export default authReducer;
+
+// Combine Reducers
+const rootReducer = combineReducers({
+    products: productsReducer,
+    authToken: authReducer,
+});
+
+export default rootReducer;

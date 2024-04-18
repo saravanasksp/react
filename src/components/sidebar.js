@@ -68,6 +68,12 @@ const Sidebar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
+                <NavLink className="nav-link " to="/productlist">
+                  <i className="material-icons">person</i>
+                  <span>Productlist</span>
+                </NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink className="nav-link " to="/">
                   <i className="material-icons">person</i>
                 {loginname}
