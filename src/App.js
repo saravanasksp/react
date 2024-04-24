@@ -13,7 +13,7 @@ import { useSelector } from 'react-redux';
 function App() {
   const tokenvalue = useSelector(state => state.authToken);
   let isAuthenticated = false
-  if(tokenvalue) {
+  if(tokenvalue.authToken) {
     isAuthenticated = true
   }
     return (
