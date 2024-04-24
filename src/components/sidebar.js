@@ -66,7 +66,7 @@ const Sidebar = () => {
                   <i className="material-icons">person</i>
                   <span>User Profile</span>
                 </NavLink>
-              </li>
+               </li>
               <li className="nav-item">
                 <NavLink className="nav-link " to="/productlist">
                   <i className="material-icons">person</i>

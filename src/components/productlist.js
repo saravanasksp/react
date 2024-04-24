@@ -1,31 +1,34 @@
 
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { fetchProducts } from '../actions';
-
-function ProductList({ products, fetchProducts }) {
+import { useEffect } from "react";
+import { useSelector } from 'react-redux';
+import Sidebar from "./sidebar";
+import Navbar from "./navbar";
+const ProductList = () => {
+  const updateprod = useSelector(state => state.products);
   useEffect(() => {
-    fetchProducts(); // Fetch products when the component mounts
-  }, [fetchProducts]);
+    
+    // Custom logic to execute when component mounts
+    console.log('Component mounted!',updateprod);
 
+    // You can add any other logic here
+    // Example: fetching data, subscribing to events, etc.
+  }, []);
   return (
     <div>
-      <h1>Product List</h1>
-      <ul>
-        {products.map(product => (
-          <li key={product.id}>{product.name} - ${product.price}</li>
-        ))}
-      </ul>
-    </div>
-  );
+            <div className="container-fluid">
+                <div className="row">
+                <Sidebar/>
+                <main className="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
+                    <Navbar/>
+                    <div className="main-content-container container-fluid px-4">
+                      <h1>Hello</h1>
+                      <p></p>
+                      </div>
+                </main>
+                </div>
+                </div>
+                </div>
+  )
 }
 
-const mapStateToProps = state => ({
-  products: state.products,
-});
-
-const mapDispatchToProps = {
-  fetchProducts,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
+export default ProductList;
