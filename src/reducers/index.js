@@ -5,7 +5,7 @@ import authReducer from './authReducer';
 
 // Combine Reducers
 const rootReducer = combineReducers({
-    products: productsReducer,
+   products: productsReducer,
     authToken: authReducer
 });
 

@@ -2,9 +2,12 @@ import { useSelector } from 'react-redux';
 import Footer from "./footer";
 import Navbar from "./navbar";
 import Sidebar from "./sidebar";
-const Productlist = () => {
-  const productlist = useSelector(state => state.products);
-  console.log("productlist",productlist)
+const ProductList = () => {
+  const updateprod = useSelector(state => state.products);
+  useEffect(() => {
+    console.log('Component mounted!',updateprod);
+
+  }, []);
     return (
         <div>
             <div className="container-fluid">
@@ -35,7 +38,6 @@ const Productlist = () => {
         </div>
     </div>
     )
-}
 
-
-export default Productlist;
+  }
+export default ProductList
