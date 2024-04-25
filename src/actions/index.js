@@ -9,15 +9,21 @@ export const saveAuthToken = (token) => {
 // Product Action Creators
 export const UpdateProducts = (products) => {
   return {
-<<<<<<< HEAD
     type: 'UPDATE_PRODUCTS',
     payload: products
   }
 };
-  
-=======
-      type: 'UPDATE_PRODUCTS',
-      payload: products
-  };
+
+// Product Action Creators
+export const BlogList = (bloglist) => {
+  return {
+    type: 'BLOG_LIST',
+    payload: bloglist
+  }
 };
->>>>>>> d9e81f6c919fd6993ac564aaba7da5fe67e5f19a
+export const BlogPost = (blogpost) => {
+  return {
+    type: 'BLOG_POST',
+    payload: blogpost
+  }
+};

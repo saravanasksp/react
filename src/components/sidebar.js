@@ -12,9 +12,9 @@ const Sidebar = () => {
   const dispatch = useDispatch();
   let loginname;
   if (tokenvalue) {
-    loginname =  <Link to={location.pathname} onClick={() => dispatch(clearAuthToken())}>Logout</Link>
+    loginname =  <Link style={{color: 'inherit'}} to={location.pathname} onClick={() => dispatch(clearAuthToken())}>Logout</Link>
   } else {
-    loginname = <Link to="/">Login</Link>
+    loginname = <Link style={{color: 'inherit'}} to="/">Login</Link>
   }
   console.log('ttt',location.pathname)
     return (
@@ -74,10 +74,10 @@ const Sidebar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link " to="/">
+                <div as="li" className="nav-link " to="/">
                   <i className="material-icons">person</i>
-                {loginname}
-                </NavLink>
+                  {loginname}
+                </div>
               </li>
             </ul>
           </div>

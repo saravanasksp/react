@@ -1682,7 +1682,8 @@ i.material-icons {
   padding: 0.625rem 0.625rem;
   transition: all 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06); }
   .nav-link.disabled {
-    color: #868e96; }
+    color: #868e96; 
+  }
 
 .nav-tabs {
   border-bottom: 1px solid #d1d4d8; }
