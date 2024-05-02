@@ -11,6 +11,7 @@ import ProductList from "./components/productlist";
 import { useSelector } from 'react-redux';
 
 function App() {
+  console.log("Hello, world!");
   const tokenvalue = useSelector(state => state.authToken);
   console.log(tokenvalue,'tokenvalue')
   let isAuthenticated = false

@@ -17,3 +17,15 @@ npm i sass --save-dev
 The first command installs the Redux core and React Redux packages.
 npm install redux react-redux
 npm install @reduxjs/toolkit
+
+
+
+webpack
+
+npm install webpack webpack-cli --save-dev
+npm install babel-loader @babel/core @babel/preset-env css-loader style-loader --save-dev
+npm install html-webpack-plugin --save-dev
+npx webpack --config webpack.config.js
+
+npm install sass-loader node-sass style-loader css-loader --save-dev
+

@@ -14,16 +14,3 @@ export const UpdateProducts = (products) => {
   }
 };
 
-// Product Action Creators
-export const BlogList = (bloglist) => {
-  return {
-    type: 'BLOG_LIST',
-    payload: bloglist
-  }
-};
-export const BlogPost = (blogpost) => {
-  return {
-    type: 'BLOG_POST',
-    payload: blogpost
-  }
-};

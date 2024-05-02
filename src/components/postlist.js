@@ -7,8 +7,7 @@ import Sidebar from "./sidebar";
 const Postlist = () => {
     const blogpostdata = useSelector(state => state.products);
     useEffect(() => {
-        blogpostdata()
-        console.log('Component mounted!',blogpostdata); 
+      console.log('Component mounted!',blogpostdata); 
     }, []);
     return (
         <div>

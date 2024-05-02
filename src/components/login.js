@@ -74,7 +74,7 @@ const Login = () => {
             <div className="row">
                 <main className="main-content col-lg-5 mx-auto d-flex my-2 my-lg-4">
                     <div className="main-content-container container-fluid px-4">
-                        <div className="card">
+                        <div className="card" style={{transform: 'translate(0, 50%)'}}>
                             <div className="card-body login-form">
                                 <ul className="nav nav-pills mb-3 border-bottom" id="pills-tab" role="tablist">
                                     <li className="nav-item" role="presentation">
@@ -99,12 +99,12 @@ const Login = () => {
                                         <input type="password"  value={password} onChange={(e) => setPassword(e.target.value)} required className="form-control shadow-none"/>
                                     </div>
                                     <div className="mb-3">
-                                        <button type="submit" className="w-100 btn bg-primary bg-gradient py-2 text-white">Login Now</button>
+                                        <button type="submit" className="w-100 btn bg-primary bg-gradient text-white btn-blue fw-bold">Login Now</button>
                                     </div>  
                                     
                                     </form>                    
-                                        <p className="my-2 sub-title"><span>Or login with</span></p>
-                                        <div className="login-with-account mb-2">
+                                        {/*<p className="my-2 sub-title"><span>Or login with</span></p>
+                                         <div className="login-with-account mb-2">
                                             <ul className="d-flex list-unstyled mb-2">
                                                 <li>
                                                     <Link to="https://www.facebook.com/" className="bg-primary text-white rounded-2 me-3 d-block text-center" target="_blank" rel="noreferrer"> 
@@ -115,7 +115,7 @@ const Login = () => {
                                                     <FontAwesomeIcon icon={faEnvelope} /> Google</Link>
                                                 </li>
                                             </ul>
-                                        </div>          
+                                        </div>           */}
                                     </div>
                                     <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                                         <form onSubmit={handleregSubmit}>          
