@@ -5,7 +5,7 @@ import { clearAuthToken } from '../actions/authActions';
 
 
 const Sidebar = () => {
-  const tokenvalue = useSelector(state => state.authToken);
+  const tokenvalue = useSelector(state => state.authToken); // getting the store value
   console.log("authToken",tokenvalue)
   //const tokenid = localStorage.getItem("tokenid")
   const location = useLocation();

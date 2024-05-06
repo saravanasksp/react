@@ -10,7 +10,7 @@ const ProductList = () => {
 
   useEffect(() => {
     console.log('Component mounted!',updateprod);
-  }, []);
+  }, [updateprod]);
     return (
         <div>
 

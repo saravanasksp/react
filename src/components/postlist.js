@@ -8,7 +8,7 @@ const Postlist = () => {
     const blogpostdata = useSelector(state => state.products);
     useEffect(() => {
       console.log('Component mounted!',blogpostdata); 
-    }, []);
+    }, [blogpostdata]);
     return (
         <div>
             <div className="container-fluid">

@@ -2,7 +2,7 @@
 export const saveAuthToken = (token) => {
   return {
       type: 'SAVE_AUTH_TOKEN',
-      payload: token
+      payload: token  // token - current state
   };
 };
   

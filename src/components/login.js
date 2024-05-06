@@ -1,7 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {  faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { saveAuthToken } from '../actions';
@@ -28,7 +24,8 @@ const Login = () => {
         //localStorage.setItem('tokenid', response.data.token);
         Navigate('/home', { state: { tokenid: response.data.token } })
         const authToken  = response.data.token;
-        dispatch(saveAuthToken(authToken));
+        dispatch(saveAuthToken(authToken)); // saveauthtoken - action name 
+        // authtoken - payload or my current state value for my action
 
         // Reset form fields and error state upon successful login
         setEmail('');
